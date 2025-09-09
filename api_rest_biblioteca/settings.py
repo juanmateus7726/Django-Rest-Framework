@@ -37,7 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'django_filters',
+    'biblioteca',
 ]
+
+REST_FRAMEWORK = {
+    # Configuracion basica de Django REST Framework
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permission.AllowAny',
+    ],
+    # Opcional: Configuracion de paginacion
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
