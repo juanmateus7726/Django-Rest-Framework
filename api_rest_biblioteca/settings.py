@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     # Configuracion basica de Django REST Framework
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permission.AllowAny',
+        'rest_framework.permissions.AllowAny',
     ],
     # Opcional: Configuracion de paginacion
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',

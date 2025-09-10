@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Autor, Libro, Prestamo
 
-class AutorSerialzier(serializers.ModelSerializer):
+class AutorSerializer(serializers.ModelSerializer):
     libros_count = serializers.SerializerMethodField()
     
     class Meta:
@@ -11,7 +11,7 @@ class AutorSerialzier(serializers.ModelSerializer):
     def get_libros_count(self, obj):
         return obj.libros.count()
     
-class LibroSerializer(serializer.ModelSerializer):
+class LibroSerializer(serializers.ModelSerializer):
     autor_nombre = serializers.CharField(source='autor.nombre', read_only=True)
     autor_apellido = serializers.CharField(source='autor.apellido', read_only=True)
     class Meta:

@@ -16,7 +16,7 @@ class AutorViewSet(viewsets.ModelViewSet):
     ordering = ['apellido', 'nombre']
     
 class LibroViewSet(viewsets.ModelViewSet):
-    queryset = Libro.objetcs.select_related('autor')
+    queryset = Libro.objects.select_related('autor')
     serializer_class = LibroSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['genero', 'disponible', 'autor']
