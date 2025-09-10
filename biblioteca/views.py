@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
@@ -55,6 +55,8 @@ class PrestamoViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_fields = ['devuelto', 'usuario']
     ordering = ['-fecha_prestamo']
+    
+    permission_classes = [permissions.IsAuthenticated]
     
     def get_queryset(self):
         # Los usuarios solo pueden ver sus propios prestamos
