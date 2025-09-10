@@ -20,7 +20,7 @@ class LibroViewSet(viewsets.ModelViewSet):
     serializer_class = LibroSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['genero', 'disponible', 'autor']
-    search_fields = ['titulo', 'autor_nombre', 'autor_apellido']
+    search_fields = ['titulo', 'autor__nombre', 'autor__apellido']
     ordering_fields = ['titulo', 'fecha_publicacion']
     ordering = ['-fecha_publicacion']
     

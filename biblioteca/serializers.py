@@ -16,7 +16,7 @@ class LibroSerializer(serializers.ModelSerializer):
     autor_apellido = serializers.CharField(source='autor.apellido', read_only=True)
     class Meta:
         model = Libro
-        fields = ['id', 'titulo', 'autor_nombre', 'autor_apellido',
+        fields = ['id', 'titulo', 'autor', 'autor_nombre', 'autor_apellido',
                 'isbn', 'fecha_publicacion', 'genero', 'paginas']
         
     def validate_isbn(self, value):
